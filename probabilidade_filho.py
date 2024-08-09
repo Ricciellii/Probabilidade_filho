@@ -1,28 +1,57 @@
 while True:
+ opcoes_cabelo = ["crespo", "ondulado", "liso"]
+ opcoes_olhos = ["marron", "verde", "azul"]
+ opcoes_cor_cabelo =["castanho", "loiro", "ruivo"]
  
 #Instruções 
 
- print('Para os tipos de cabelo, digite: Crespo, Ondulado ou liso')
- print('Para os tipos de olhos, digite: Castanho, Verde ou Azul')
- print('Para as cores de cabelo, digite: Preto, Loiro, Ruivo,')
+ print("Para os tipos de cabelo, digite:", ", ".join(opcoes_cabelo))
+ print("Para as cores de cabelo, digite:", ", ".join(opcoes_cor_cabelo))
+ print("Para as cores dos olhos, digite:", ", ".join(opcoes_olhos))
+ 
+ 
 
 #dados
-
+ 
  cabelo_pai = input(str('Qual é o tipo do cabelo do pai? ')).lower()
+ if cabelo_pai not in opcoes_cabelo:
+    print("Você digitou um tipo de cabelo inválido.")
+    continue
+
  cabelo_mae = input(str('Qual é o tipo de cabelo da mãe? ')).lower()
- cc_pai = input(str ('Qual a cor do cabelo do pai: ')).lower
- cc_mae = input(str('Qual a cor do cabelo da mão? ')).lower
+ if cabelo_mae not in opcoes_cabelo:
+  print("voce não digitou um tipo de cabelo valido")
+  continue
+   
+ cc_pai = input(str ('Qual a cor do cabelo do pai: ')).lower()
+ if cc_pai not in opcoes_cor_cabelo:
+  print("voce não digitou uma cor de cabelo valida")
+  continue
+
+ cc_mae = input(str('Qual a cor do cabelo da mão? ')).lower()
+ if cc_mae not in opcoes_cor_cabelo:
+   print("voce não digitou uma cor de cabelo valida")
+   continue
+    
  mae = input(str("Qual é a cor dos olhos da mãe? ")).lower()
+ if mae not in opcoes_olhos:
+  print("voce não digitou uma cor de olho valida")
+  continue
+ 
  pai = input(str("Qual é a cor dos olhos do pai? ")).lower()
- ordem = input('Voce deseja que o sobrenome da mãe sejam os ultimos? (digite, sim ou não)').lower()
+ if pai not in opcoes_olhos:
+  print("voce não digitou uma cor de olho valida")
+  continue
 
 #nome
 
+ ordem = input('Voce deseja que o sobrenome da mãe sejam os ultimos? (digite, sim ou não)').lower()
+
  if ordem == 'sim':
-  nome_completo = nome_f +' '+ nome_p +' '+ nome_m +' '
   nome_f = input(str('Digite o primeiro nome da filha(o): ')).lower()
   nome_p = input(str('Digite o sobrenome do pai: ')).lower()
   nome_m = input(str('Digite o sobrenome da mãe: ')).lower()
+  nome_completo = nome_f +' '+ nome_p +' '+ nome_m +' '
 
  else:
   nome_f = input(str('Digite o primeiro nome da filha(o): ')).lower()
@@ -61,13 +90,13 @@ while True:
 
 #cor do cabelo
 
- if cc_pai == "preto" and cc_mae == "preto".lower():
+ if cc_pai == "castanho" and cc_mae == "castanho".lower():
     print("Seu filho tera cabelos castanhos.")
 
- elif cc_pai == "preto" and cc_mae == "loiro" or cc_pai == "loiro" and cc_mae == "preto".lower():
+ elif cc_pai == "castanho" and cc_mae == "loiro" or cc_pai == "loiro" and cc_mae == "castanho".lower():
     print("as probabilidades da cor do cabelo da sua filha(o) são: 60% castanho, 40%.")
 
- elif cc_pai == "preto" and cc_mae == "ruivo" or cc_pai == "ruivo" and cc_mae == "preto".lower(): 
+ elif cc_pai == "castanho" and cc_mae == "ruivo" or cc_pai == "ruivo" and cc_mae == "castanho".lower(): 
     print("As probabilidades dos olhos são: 60% Azul, 40% castanho (lembrando que a cor do cabelo do pai prevalece).")
 
  elif cc_pai == "verde" and cc_mae == "verde".lower():
@@ -76,7 +105,7 @@ while True:
  elif cc_pai == "verde" and cc_mae == "castanho" or cc_pai == "castanho" and cc_mae == "verde".lower():
     print("As probabilidades dos olhos são: 50% marron, 50% Verde (lembrando que a cor dos olhos da mãe prevalece).")
 
- elif cc_pai == "castanho" and cc_mae == "castanho".lower():
+ elif cc_pai == "castanho" and cc_mae == "castanho".lower():[]
     print("Seu filho provavelmente terá olhos castanhos.")
 
 #cor dos olhos
@@ -87,16 +116,16 @@ while True:
  elif pai == "azul" and mae == "verde" or pai == "verde" and mae == "azul".lower():
     print("As probabilidades dos olhos são: 50% Azul, 50% Verde (lembrando que a cor dos olhos da mãe prevalece).")
 
- elif pai == "azul" and mae == "castanho" or pai == "castanho" and mae == "azul".lower(): 
+ elif pai == "azul" and mae == "marron" or pai == "marron" and mae == "azul".lower(): 
     print("As probabilidades dos olhos são: 50% Azul, 50% Marron (lembrando que a cor dos olhos da mãe prevalece).")
 
  elif pai == "verde" and mae == "verde".lower():
    print("Seu filho provavelmente terá olhos verdes.")
 
- elif pai == "verde" and mae == "castanho" or pai == "castanho" and mae == "verde".lower():
+ elif pai == "verde" and mae == "marron" or pai == "marron" and mae == "verde".lower():
     print("As probabilidades dos olhos são: 50% marron, 50% Verde (lembrando que a cor dos olhos da mãe prevalece).")
 
- elif pai == "castanho" and mae == "castanho".lower():
+ elif pai == "marron" and mae == "marron".lower():
     print("Seu filho provavelmente terá olhos castanhos.")
 
  print ('O nome da filha(o) sera: ', nome_completo)
